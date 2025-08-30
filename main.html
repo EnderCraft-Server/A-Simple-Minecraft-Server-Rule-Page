@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一个简单的服务器规则页</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .rule {
+            margin-bottom: 25px;
+            padding: 20px;
+            border-left: 4px solid #4facfe;
+            border-radius: 4px;
+            background-color: #f8fafc;
+            transition: all 0.3 ease;
+            position: relative;
+        }
+        
+        .rule:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            background-color: #f0f7ff;
+        }
+        
+        .rule::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #4facfe, #00f2fe);
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .rule-number {
+            font-weight: bold;
+            color: #0066cc;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .rule-text {
+            font-size: 1rem;
+            color: #444;
+            line-height: 1.7;
+        }
+        
+        .highlight {
+            background-color: rgba(79, 172, 254, 0.15);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #0066cc;
+        }
+        
+        .warning {
+            background-color: rgba(255, 76, 76, 0.1);
+            padding: 15px;
+            border-left: 4px solid #ff4c4c;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        
+        .warning-title {
+            font-weight: bold;
+            color: #ff4c4c;
+            margin-bottom: 5px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #888;
+            background-color: #f5f7fa;
+            border-top: 1px solid #eee;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                border-radius: 5px;
+            }
+            
+            .header {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .rule {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+        }
+        
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .rule {
+            animation: fadeIn 0.5 ease-out forwards;
+        }
+        
+        .rule:nth-child(1) { animation-delay: 0.1; }
+        .rule:nth-child(2) { animation-delay: 0.2; }
+        .rule:nth-child(3) { animation-delay: 0.3; }
+        .rule:nth-child(4) { animation-delay: 0.4; }
+        .rule:nth-child(5) { animation-delay: 0.5; }
+        .rule:nth-child(6) { animation-delay: 0.6; }
+        .rule:nth-child(7) { animation-delay: 0.7; }
+        .rule:nth-child(8) { animation-delay: 0.8; }
+        .rule:nth-child(9) { animation-delay: 0.9; }
+        .rule:nth-child(10) { animation-delay: 1.0; }
+        .rule:nth-child(11) { animation-delay: 1.1; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>XXX服务器规则</h1>
+            <div class="subtitle">请所有玩家仔细阅读并遵守以下规定</div>
+        </div>
+        
+        <div class="content">
+            <div class="rule">
+                <div class="rule-number">第一条</div>
+                <div class="rule-text"></div>
+            </div>
+        <div class="footer">
+            <p>最终解释权归XXX服务器最高管理组所有</p>
+            <p>最后更新时间：YYYY年MM月DD日</p>
+        </div>
+    </div>
+</body>
+</html>
