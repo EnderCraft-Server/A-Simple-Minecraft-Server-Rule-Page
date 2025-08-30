@@ -4,8 +4,8 @@
 ## 功能：
 ### 正常规则帖子、Highlight部分、Warning模板
 
-## 功能的套用：
-### 正常规则帖子:
+
+### 正常文本格式:
 
 ```HTML
 <div class="rule">
@@ -14,15 +14,24 @@
 </div>
 ```
 
-### 高亮文本：
+### 高亮文本格式：
 
 ```HTML
 <span class="highlight">此处填要高亮的文本</span>
 ```
-> 高亮文本模块可以在正文中插入，例如：
+#### 高亮文本模块可以在正文中插入，例如：
 ```HTML
 <div class="rule">
   <div class="rule-number">第N条</div>
     <div class="rule-text">此处填正文<span class="highlight">此处填要高亮的文本</span></div>
 </div>
 ```
+
+### 警告文本格式：
+```HTML
+<div class="warning">
+  <div class="warning-title">注意：</div>
+    <p>此处填警告文本</p>
+</div>
+```
+## ❗以上文本格式除警告文本格式和正常文本格式外，均可以组合使用
