@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>澪之境服务器规则</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .rule {
+            margin-bottom: 25px;
+            padding: 20px;
+            border-left: 4px solid #4facfe;
+            border-radius: 4px;
+            background-color: #f8fafc;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .rule:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            background-color: #f0f7ff;
+        }
+        
+        .rule::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #4facfe, #00f2fe);
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .rule-number {
+            font-weight: bold;
+            color: #0066cc;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .rule-text {
+            font-size: 1rem;
+            color: #444;
+            line-height: 1.7;
+        }
+        
+        .highlight {
+            background-color: rgba(79, 172, 254, 0.15);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #0066cc;
+        }
+        
+        .warning {
+            background-color: rgba(255, 76, 76, 0.1);
+            padding: 15px;
+            border-left: 4px solid #ff4c4c;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        
+        .warning-title {
+            font-weight: bold;
+            color: #ff4c4c;
+            margin-bottom: 5px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #888;
+            background-color: #f5f7fa;
+            border-top: 1px solid #eee;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                border-radius: 5px;
+            }
+            
+            .header {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .rule {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+        }
+        
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .rule {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        
+        .rule:nth-child(1) { animation-delay: 0.1s; }
+        .rule:nth-child(2) { animation-delay: 0.2s; }
+        .rule:nth-child(3) { animation-delay: 0.3s; }
+        .rule:nth-child(4) { animation-delay: 0.4s; }
+        .rule:nth-child(5) { animation-delay: 0.5s; }
+        .rule:nth-child(6) { animation-delay: 0.6s; }
+        .rule:nth-child(7) { animation-delay: 0.7s; }
+        .rule:nth-child(8) { animation-delay: 0.8s; }
+        .rule:nth-child(9) { animation-delay: 0.9s; }
+        .rule:nth-child(10) { animation-delay: 1.0s; }
+        .rule:nth-child(11) { animation-delay: 1.1s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>澪之境服务器规则</h1>
+            <div class="subtitle">请所有玩家仔细阅读并遵守以下规定</div>
+        </div>
+        
+        <div class="content">
+            <div class="rule">
+                <div class="rule-number">第一条</div>
+                <div class="rule-text">因2025/8/8及前段时间服务器由于创造及tp问题产生了些许争执，且服务器目前较为混乱，特立此规。</div>
+            </div>
+            
+            <div class="rule">
+                <div class="rule-number">第二条（关于原管理员审核方案问题的改正及完善）</div>
+                <div class="rule-text">自<span class="highlight">2025/8/9</span>日起，原服务器管理员审核方案失效，新方案起效。任何除服主以外人员在未经过审核前不得拥有OP或群管，审核题目将会于下个月拟定完毕并发布在澪之境服务器的QQ群中。在此期间，除服主外的任何人将不会拥有OP！另外，在你成为管理员的审核通过后，你将会拥有管理员，并且将会有<span class="highlight">三个月的观察期</span>，在此期间如果你身上发生了一些对其他玩家及对服务器不利的事件，服务器最高管理组有权撤销你的管理员权限。</div>
+            </div>
+            
+            <div class="rule">
+                <div class="rule-number">第三条（对于创造模式切换的管控）</div>
+                <div class="rule-text">任何人（包括服主在内）不可以使用创造模式建造任何建筑，在本服中，创造模式被定义为"查找并消灭熊孩子行为的专用模式"，而不是"玩家们用来娱乐与打趣的模式"！违反澪之境服务器玩家行为规范第三条的，依法判处<span class="highlight">封禁1个月与清除背包所有物品</span>。</div>
+            </div>
+            
+            <div class="rule">
+                <div class="rule-number">第四条（对于色情、不合规建筑及言语的管控）</div>
+                <div class="rule-text">服务器内，不允许长期存在色情建筑（如类似男性私处的建筑等），如果你想短时间与其他玩家开玩笑，请你在玩笑话结束后立刻将此建筑拆除，此外，在服务器内，请不要使用色情词语作为语气助词（例如：78的）！违反澪之境服务器玩家行为规范第四条的，视情况而定，如果该建筑存在时间超过<span class="highlight">1个星期</span>，你将被依法判处<span class="highlight">封禁2个月及清除背包</span>，时间不在该范围内的，由管理组视情况判决，并依法拆除违规建筑或清除违规言论。</div>
+            </div>
+            
+            <div class="rule">
+                <div class="rule-number">第五条（对于外挂及炸服等的管控）</div>
+                <div class="rule-text">禁止使用一切外挂，包括但不限于Wurst、Pyro等等，当然，你可以使用合法的辅助程序，例如Tweakeroo等等。违反该法规第五条的，触犯给予警告，若多次违反，将永久封禁，毁坏其他玩家建筑的，服务器会将你自首次进服以来的所有行为<span class="highlight">回档！</span> PS: Tweakeroo中的连点器、凭空放方块等功能是不被允许的！</div>
+            </div>
+            
+            <div class="rule">
+                <div class="rule-number">第六条（关于侮辱及谩骂的管控）</div>
+                <div class="rule-text">服务器QQ群中禁止发表一切有关于侮辱他人人格及谩骂他人的信息，更不可以发表其他人的个人信息，请尊重其他玩家的隐私！</div>
+            </div>
+            
+            <div class="rule">
+                <div class="rule-number">第七条</div>
+                <div class="rule-text">以上条例将于<span class="highlight">公元后2025年8月9日</span>生效！</div>
+            </div>
+            
+            <div class="rule">
+                <div class="rule-number">第八条</div>
+                <div class="rule-text"><span class="highlight">请勿！</span>在服务器群内宣传任何其他服务器，宣传任何其他服务器的，依法处以<span class="highlight">踢除并拉黑</span>处罚。</div>
+            </div>
+            
+            <div class="rule">
+                <div class="rule-number">第九条</div>
+                <div class="rule-text">任何人游玩时必须使用生存模式，包括管理员、腐竹和普通成员，使用外挂获得创造模式的，依法处以<span class="highlight">永久封禁</span>之处罚！，通过管理员获得创造模式的，<span class="highlight">管理员停职观察一个月，该玩家一个月内禁止加入服务器</span>（视情况而定）</div>
+            </div>
+            
+            <div class="rule">
+                <div class="rule-number">第十条</div>
+                <div class="rule-text">服务器自<span class="highlight">2025/8/20</span>起开放了Fly和Tpa命令的使用权限，可以使用<span class="highlight">/tpa &lt;玩家名&gt;</span>，对该玩家发起传送申请，对应的，如果你收到传送申请，也可以通过点击聊天栏中的√或×同意或拒绝传送请求。另外，如果你被困在了一些地方，并且烟花火箭和鞘翅的耐久度和储量告急，可以使用<span class="highlight">/fly</span>命令启动飞行，但是一定要记得在储量得到补充后关闭！</div>
+            </div>
+            
+            <div class="rule">
+                <div class="rule-number">第十一条</div>
+                <div class="rule-text">即日起，将不会对管理员开放所有权限，只会开放部分安全的权限，具体的权限列表将在9月后公开。</div>
+            </div>
+            
+            <div class="rule">
+                <div class="rule-number">第十二条</div>
+                <div class="rule-text">自2025/8/26日起，本服务器服主将彻底变更为Ender_drate(imChina218)。</div>
+            </div>
+            
+            <div class="rule">
+                <div class="rule-number">第十三条</div>
+                <div class="rule-text">即日起，严禁在QQ群内发表任何关于A片、黄色网站的信息！在QQ群内发表这些内容的，处以踢出群聊和撤回所有这方面信息的处罚</div>
+            </div>
+            
+            <div class="warning">
+                <div class="warning-title">注意：</div>
+                <p>请所有玩家严格遵守以上规则，共同维护良好的游戏环境！</p>
+            </div>
+            <div class="warning">
+                <div class="warning-title">注意：</div>
+                <p>进群将默认为同意这份规则，进群后仍不遵守规则者，将视情况处罚</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>最终解释权归澪之境服务器最高管理组所有</p>
+            <p>最后更新时间：2025年8月30日</p>
+        </div>
+    </div>
+</body>
+</html>
